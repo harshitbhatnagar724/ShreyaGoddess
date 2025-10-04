@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mistress Shreya – Domination Redefined</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet" />
+
+  <!-- Lightbox CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+  />
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <style>
+    :root {
+      --bg: #111;
+      --text: #eee;
+      --accent: #e60073;
+      --muted: #aaa;
+      --maxw: 1200px;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: "Roboto", sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #000;
+      padding: 20px 0;
+      text-align: center;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+    nav a:hover,
+    nav a.active {
+      color: var(--accent);
+    }
+    section {
+      max-width: var(--maxw);
+      margin: 40px auto;
+      padding: 0 20px;
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 3em;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.2em;
+      color: var(--muted);
+    }
+    .slave-line {
+      text-align: center;
+      margin-top: 20px;
+      font-style: italic;
+      color: #ccc;
+      font-size: 1em;
+    }
+    /* Gallery */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+    .caption {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    /* Tributes */
+    .tributes .gallery div {
+      max-width: 350px;
+      cursor: pointer;
+    }
+    .tribute-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .tribute-icon {
+      font-size: 3em;
+      color: var(--accent);
+    }
+    /* Sessions */
+    .session-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .session-item {
+      background: #1a1a1a;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .session-item:hover {
+      background-color: var(--accent);
+      color: #111;
+    }
+    .session-item h3 {
+      color: var(--accent);
+      font-size: 1.2em;
+      margin-bottom: 8px;
+    }
+    /* Contact */
+    .contact {
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact a {
+      color: var(--accent);
+      display: block;
+      margin: 8px 0;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 20px;
+      margin-top: 60px;
+      border-top: 1px solid #333;
+    }
+
+    /* Custom styles for image upload preview */
+    .image-container {
+      position: relative;
+      max-width: 350px;
+      flex: 1 1 350px;
+    }
+    .image-container label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--accent);
+      cursor: pointer;
+      font-weight: bold;
+      user-select: none;
+    }
+    .image-container input[type="file"] {
+      display: none;
+    }
+    .toggle-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(0,0,0,0.7);
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      display: none;
+      line-height: 30px;
+      text-align: center;
+      padding: 0;
+      user-select: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <a href="#" class="nav-link active" data-target="home">Home</a>
+      <a href="#" class="nav-link" data-target="tributes">Tributes</a>
+      <a href="#" class="nav-link" data-target="sessions">Sessions</a>
+      <a href="#" class="nav-link" data-target="contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Home Section (Hero + Gallery) -->
+  <section id="home" class="active" data-aos="fade-up">
+    <div class="hero">
+      <h1>Meet Your Mistress Shreya</h1>
+      <p>
+        I am Mistress Shreya — the storm in your veins and the silence that breaks your will.
+        I do not ask for obedience, I take it. My power is elegance sharpened into exquisite cruelty;
+        my presence leaves no room for your control. Crawl, kneel, and surrender the illusion of freedom you once clung to.
+      </p>
+      <p class="slave-line">
+        I am Harshit — her collared dog, a willing slave beneath Mistress Shreya’s heel. My only purpose is to obey, serve, and worship the ground she walks upon.
+      </p>
+    </div>
+
+    <h2 style="text-align:center; color: var(--accent);" data-aos="fade-up">Power in Every Step</h2>
+    <div class="gallery">
+
+      <!-- Image Upload 1 -->
+      <div class="image-container" data-aos="zoom-in">
+        <label for="file1">Select Image 1</label>
+        <input type="file" id="file1" accept="image/*" />
+        <img id="placeholder1" src="https://via.placeholder.com/350x200?text=Placeholder+1" alt="Placeholder 1" />
+        <img id="preview1" alt="Preview 1" style="display:none;" />
+        <button id="toggle1" class="toggle-btn">&#9660;</button>
+        <p class="caption">True devotion begins where defiance ends.</p>
+      </div>
+
+      <!-- Image Upload 2 -->
+      <div class="image-container" data-aos="zoom-in">
+        <label for="file2">Select Image 2</label>
+        <input type="file" id="file2" accept="image/*" />
+        <img id="placeholder2" src="https://via.placeholder.com/350x200?text=Placeholder+2" alt="Placeholder 2" />
+        <img id="preview2" alt="Preview 2" style="display:none;" />
+        <button id="toggle2" class="toggle-btn">&#9660;</button>
+        <p class="caption">Where I command, you exist only to serve.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tributes Section -->
+  <section id="tributes" data-aos="fade-up">
+    <h2 style="text-align:center; color: var(--accent); margin-bottom:20px;">Tributes</h2>
+
+    <div class="gallery tributes" style="justify-content:center; gap: 30px;">
+      <!-- Rupee Tributes -->
+      <div class="tribute-item" data-message="₹1,000+ tribute">
+        <div class="tribute-icon">💰</div>
+        <a href="#" class="tribute-link" aria-label="₹1000+ Tribute">₹1,000+</a>
+      </div>
+
+      <div class="tribute-item" data-message="₹5,000+ tribute">
+        <div class="tribute-icon">💸</div>
+        <a href="#" class="tribute-link" aria-label="₹5000+ Tribute">₹5,000+</a>
+      </div>
+
+      <div class="tribute-item" data-message="₹10,000+ tribute">
+        <div class="tribute-icon">🪙</div>
+        <a href="#" class="tribute-link" aria-label="₹10000+ Tribute">₹10,000+</a>
+      </div>
+
+      <div class="tribute-item" data-message="Amazon Wishlist item">
+        <div class="tribute-icon">📦</div>
+        <a href="#" class="tribute-link" aria-label="Amazon Wishlist Tribute">Amazon Wishlist</a>
+      </div>
+    </div>
+
+    <h3 style="text-align:center; color: var(--accent); margin-top: 40px; margin-bottom: 15px;">
+      Special Tribute Items
+    </h3>
+    <div class="gallery tributes" style="justify-content:center; gap: 30px;">
+      <!-- Special Items -->
+      <div class="tribute-item" data-message="iPhone">
+        <div class="tribute-icon">📱</div>
+        <a href="#" class="tribute-link" aria-label="iPhone Tribute">iPhone</a>
+      </div>
+
+      <div class="tribute-item" data-message="Samsung Phone">
+        <div class="tribute-icon">📲</div>
+        <a href="#" class="tribute-link" aria-label="Samsung Phone Tribute">Samsung Phone</a>
+      </div>
+
+      <div class="tribute-item" data-message="Heels">
+        <div class="tribute-icon">👠</div>
+        <a href="#" class="tribute-link" aria-label="Heels Tribute">Heels</a>
+      </div>
+
+      <div class="tribute-item" data-message="Dresses">
+        <div class="tribute-icon">👗</div>
+        <a href="#" class="tribute-link" aria-label="Dresses Tribute">Dresses</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sessions Section -->
+  <section id="sessions" data-aos="fade-up">
+    <h2 style="text-align:center; color: var(--accent);">Sessions</h2>
+    <div class="session-list">
+      <div class="session-item" data-message="Strict Obedience session">
+        <h3>Strict Obedience</h3>
+        <p>Clear rules, instant compliance.</p>
+      </div>
+      <div class="session-item" data-message="Submission Session session">
+        <h3>Submission Session</h3>
+        <p>Test of surrender and trust.</p>
+      </div>
+      <div class="session-item" data-message="Discipline Class session">
+        <h3>Discipline Class</h3>
+        <p>Behavior training with rewards & punishment.</p>
+      </div>
+      <div class="session-item" data-message="Service Training session">
+        <h3>Service Training</h3>
+        <p>Perfecting acts of devotion and protocol.</p>
+      </div>
+      <div class="session-item" data-message="Protocol Night session">
+        <h3>Protocol Night</h3>
+        <p>Dress, speech, and etiquette enforced.</p>
+      </div>
+      <div class="session-item" data-message="Bondage & Control session">
+        <h3>Bondage & Control</h3>
+        <p>Consensual restraint and dominance play.</p>
+      </div>
+      <div class="session-item" data-message="Intense Mind Games session">
+        <h3>Intense Mind Games</h3>
+        <p>Psychological power play and challenges.</p>
+      </div>
+      <div class="session-item" data-message="Sensory Play session">
+        <h3>Sensory Play</h3>
+        <p>Controlled stimulation of the senses.</p>
+      </div>
+      <div class="session-item" data-message="Reward & Punishment session">
+        <h3>Reward & Punishment</h3>
+        <p>Clear system of incentives and penalties.</p>
+      </div>
+      <div class="session-item" data-message="Role‑Play Domination session">
+        <h3>Role‑Play Domination</h3>
+        <p>Step into roles and obey commands.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact" data-aos="fade-up">
+    <h2 style="text-align:center; color: var(--accent);">Contact</h2>
+    <p style="text-align:center;">
+      Contact Mistress Shreya directly:
+    </p>
+    <a href="https://t.me/+EmwXhJl90O9iNmY9" target="_blank" rel="noopener noreferrer">Telegram Group</a>
+    <a href="mailto:Queen87shreya@gmail.com">Email: Queen87shreya@gmail.com</a>
+    <a href="https://www.instagram.com/lady_shreya?igsh=NGFpdzR0N3hmYjM4" target="_blank" rel="noopener noreferrer">Instagram</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Mistress Shreya. All rights reserved.
+  </footer>
+
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+
+    // Navigation tab functionality
+    const navLinks = document.querySelectorAll("nav a.nav-link");
+    const sections = document.querySelectorAll("section");
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = link.getAttribute("data-target");
+
+        navLinks.forEach((l) => l.classList.remove("active"));
+        sections.forEach((sec) => sec.classList.remove("active"));
+
+        link.classList.add("active");
+        document.getElementById(target).classList.add("active");
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+
+    // Tribute click handler
+    const tributeItems = document.querySelectorAll(".tribute-item");
+
+    tributeItems.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        const tributeMessage = item.getAttribute("data-message");
+
+        const telegramMessage = encodeURIComponent(
+          `Ma'am Namaste, ma'am main aapke charno mein ek tribute dena chahta hu: ${tributeMessage}.`
+        );
+
+        const telegramUrl = `https://t.me/+EmwXhJl90O9iNmY9?text=${telegramMessage}`;
+
+        window.open(telegramUrl, "_blank");
+      });
+    });
+
+    // Sessions click handler
+    const sessionItems = document.querySelectorAll(".session-item");
+
+    sessionItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        const sessionMessage = item.getAttribute("data-message");
+
+        const telegramMessage = encodeURIComponent(
+          `Ma'am Namaste, ma'am main aapka session lena chahta hu: ${sessionMessage}.`
+        );
+
+        const telegramUrl = `https://t.me/+EmwXhJl90O9iNmY9?text=${telegramMessage}`;
+
+        window.open(telegramUrl, "_blank");
+      });
+    });
+  </script>
+</body>
+</html>
